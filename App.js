@@ -31,7 +31,7 @@ export default function App() {
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.container}>
-        <Text style={styles.heading}>Welcome To POGS</Text>
+        <Text style={[styles.heading,styles.welcomeHeading]}>{'\n'}Welcome To{'\n'}POGS</Text>
         <Image style={styles.logo} source={Images.logo} />
 
         <View style={styles.row1}>
@@ -84,7 +84,7 @@ export default function App() {
           </Picker>
         </View>
 
-        <Text style={styles.heading}>Total Cost of Order: ${totalPrice}</Text>
+        <Text style={[styles.heading,styles.totalPriceHeading]}>Total Cost of Order: ${totalPrice}</Text>
         <Button title="CALCULATE" onPress={calculateTotal} />
       </View>
 
@@ -99,20 +99,52 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#F7FFF6',
+    
     alignItems: 'center',
     display: 'flex',
+    backgroundColor: '#ffe2bf',
   },
   heading: {
-    fontSize: 20,
     fontWeight: 'bold',
     textAlign: 'center',
     color: 'black',
     margin: 10,
+    marginBottom: 20,
+    textAlignVertical: 'center', 
+  },
+  welcomeHeading: {
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    backgroundColor: '#685147',
+    fontSize: 40,
+    marginBottom: 50,
+    borderWidth: 2,         
+    borderColor: 'black',   
+    borderRadius: 50,       
+    textAlign: 'center',    
+    textAlignVertical: 'center', 
+    color: '#ffc175',
+  },
+  totalPriceHeading: {
+    alignItems: 'center',
+    alignSelf: 'stretch',
+    backgroundColor: '#685147',
+    fontSize: 20,
+    borderWidth: 2,         
+    borderColor: 'black',   
+    borderRadius: 50,       
+    textAlign: 'center',    
+    textAlignVertical: 'center', 
+    color: '#ffc175',
   },
   logo: {
-    height: 128,
-    width: 128,
+    height: 228,
+    width: 228,
+    marginBottom: 50, 
+    borderWidth: 10, 
+    borderRadius: 200,  
+    borderColor:'black',
+    backgroundColor:'#787878'
   },
   row1: {
     flexDirection: 'row',
@@ -120,9 +152,11 @@ const styles = StyleSheet.create({
   },
   vegPicker: {
     flex: 2,
+    backgroundColor:  '#88ff63',
   },
   fruitPicker: {
     flex: 2,
+    backgroundColor:  '#ff917a',
   },
   pickerItem: {
     height: 160,
@@ -136,13 +170,13 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   devTitle: {
-    color: 'white',
+    color: '#ffc175',
     fontSize: 16,
     fontWeight: 'Bold',
     padding: 5,
   },
   devText: {
-    color: 'white',
+    color: '#ffc175',
     padding: 5,
   },
 });
